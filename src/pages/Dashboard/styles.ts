@@ -17,16 +17,19 @@ export const Title = styled.h1`
 `;
 
 export const CardContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 32px;
-  margin-top: -150px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const Card = styled.div`
   background: ${({ total }: CardProps): string => (total ? '#FF872C' : '#fff')};
   padding: 22px 32px;
   border-radius: 5px;
+  flex: 1;
   color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
 
   header {
@@ -45,10 +48,20 @@ export const Card = styled.div`
     font-weight: normal;
     line-height: 54px;
   }
+
+  & + div {
+    margin-top: 30px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+  }
 `;
 
 export const TableContainer = styled.section`
   margin-top: 64px;
+  display: flex;
 
   table {
     width: 100%;

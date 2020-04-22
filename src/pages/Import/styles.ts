@@ -26,8 +26,13 @@ export const ImportFileContainer = styled.section`
 export const Footer = styled.section`
   margin-top: 36px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 
   p {
     display: flex;
@@ -35,6 +40,11 @@ export const Footer = styled.section`
     font-size: 12px;
     line-height: 18px;
     color: #969cb3;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
 
     img {
       margin-right: 5px;

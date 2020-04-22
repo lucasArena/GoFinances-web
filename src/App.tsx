@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Routes from './routes';
@@ -10,6 +11,7 @@ const App: React.FC = () => (
     <GlobalStyle />
     <Router>
       <Routes />
+      <ToastContainer />
     </Router>
   </>
 );
